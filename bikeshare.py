@@ -78,7 +78,7 @@ def time_stats(df):
     else:
         hour = f"at {df['hour'].mode()[0] - 12} pm"
     print(f"People bikeshare most frequently {month}{day}{hour}.\n")
-    print(f"⌛ The calculation took {time.time() - start_time} seconds.\n")
+    print(f"⌛ The calculation took {round(time.time() - start_time, 3)} seconds.\n")
     input("Press Enter to see more statistics.")
     print("\n" + "-" * 68 + "\n")
 
@@ -93,7 +93,7 @@ def station_stats(df):
     df["Trip"] = df["Start Station"] + " to " + df["End Station"]
     popular_trip = df["Trip"].mode()[0]
     print(f"The most popular trip is from {popular_trip}.\n")
-    print(f"⌛ The calculations took {time.time() - start_time} seconds.\n")
+    print(f"⌛ The calculations took {round(time.time() - start_time, 3)} seconds.\n")
     input("Press Enter to see the more statistics.")
     print("\n" + "-" * 53 + "\n")
 
@@ -110,7 +110,7 @@ def trip_duration_stats(df):
     minutes = f"{int(travel_time_mean // 60)} minutes"
     seconds = f", {int(travel_time_mean % 60)} seconds"
     print(f"The average travel time is {minutes}{seconds}.\n")
-    print(f"⌛ The calculations took {time.time() - start_time} seconds.\n")
+    print(f"⌛ The calculations took {round(time.time() - start_time, 3)} seconds.\n")
     input("Press Enter to see more statistics.")
     print("\n" + "-" * 53 + "\n")
 
@@ -121,7 +121,7 @@ def user_stats(df):
     user_types = df["User Type"].value_counts()
     for index, value in user_types.items():
         print(f"{index:<14}{value}")
-    print(f"\n⌛ The calculation took {time.time() - start_time} seconds.\n")
+    print(f"\n⌛ The calculation took {round(time.time() - start_time, 3)} seconds.\n")
     if "Gender" in df.columns:
         input("Press Enter to see more statistics.")
         print()
@@ -130,7 +130,7 @@ def user_stats(df):
         genders = df["Gender"].value_counts()
         for index, value in genders.items():
             print(f"{index:<14}{value}")
-        print(f"\n⌛ The calculation took {time.time() - start_time} seconds.\n")
+        print(f"\n⌛ The calculation took {round(time.time() - start_time, 3)} seconds.\n")
     if "Birth Year" in df.columns:
         input("Press Enter to see more statistics.")
         print()
@@ -141,7 +141,7 @@ def user_stats(df):
         print(f"The oldest user was born in {birth_year_earliest}.")
         print(f"The youngest user was born in {birth_year_latest}.")
         print(f"The most common year of birth among users is {birth_year_mode}.")
-        print(f"\n⌛ The calculation took {time.time() - start_time} seconds.\n")
+        print(f"\n⌛ The calculation took {round(time.time() - start_time, 3)} seconds.\n")
     input("Press Enter to continue.")
     print("\n" + "-" * 53 + "\n")
 

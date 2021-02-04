@@ -1,15 +1,5 @@
-### Date created
-Include the date you created this project and README file.
+*This project and its README file were created on February 4, 2021*
 
-### Project Title
-Replace the Project Title
+## BIKESHARE STATISTICS FOR THREE US CITIES
 
-### Description
-Describe what your project is about and what it does
-
-### Files used
-Include the files used
-
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+**Bikeshare Statistics for Three US Cities** is a program for exploring bikeshare data for **Chicago**, **New York**, and **Washington** created as a project for **Udacity's _Programming for Data Science Nanodegree_**.

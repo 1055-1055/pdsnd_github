@@ -2,6 +2,8 @@ import time
 import pandas as pd
 
 def set_filters():
+    """This function sets the filters: choice of city, whether to filter or not, and what to filter on.
+    It returns three variables: city, month, day"""
     error_message = "❌ You either misspelled your choice or didn't enter"
     while True:
         city = input("Do you want to see bikeshare data for "
@@ -48,6 +50,8 @@ def set_filters():
     return city, month, day
 
 def load_data(city, month, day):
+    """This function uses its three arguments (city, month, day) to choose one of the three .csv files,
+    create a pandas dataframe, filter its data, and, finally, return the dataframe df"""
     df = pd.read_csv(CITY_DATA[city])
     df["Start Time"] = pd.to_datetime(df["Start Time"])
     df["month"] = df["Start Time"].dt.month

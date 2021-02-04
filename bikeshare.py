@@ -145,33 +145,6 @@ def user_stats(df):
     input("Press Enter to continue.")
     print("\n" + "-" * 53 + "\n")
 
-def display_data(df):
-    view_data = input("Would you like to view five rows of individual trip data? (y/n) ").lower()
-    if view_data == "y":
-        start_loc = 0
-        while start_loc < len(df):
-            for i in range (start_loc, start_loc + 5):
-                print()
-                print(f"{'#':<18}{df['Unnamed: 0'][i]}")
-                print(f"{'User Type':<18}{df['User Type'][i]}")
-                if "Gender" in df.columns:
-                    print(f"{'Gender':<18}{df['Gender'][i]}")
-                if "Birth Year" in df.columns:
-                    if df['Birth Year'][i] > 0:
-                        print(f"{'Birth Year':<18}{int(df['Birth Year'][i])}")
-                    else:
-                        print(f"{'Birth Year':<18}{df['Birth Year'][i]}")
-                print(f"{'Start Station':<18}{df['Start Station'][i]}")
-                print(f"{'Start Time':<18}{df['Start Time'][i]}")
-                print(f"{'End Station':<18}{df['End Station'][i]}")
-                print(f"{'End Time':<18}{df['End Time'][i]}")
-                print(f"{'Trip Duration':<18}{df['Trip Duration'][i]} seconds")
-            start_loc += 5
-            cont = input("\nDo you want to see five more rows of data? (y/n) ").lower()
-            if cont == "n":
-                print()
-                break
-
 def main():
     print("🚲 🚲 🚲 BIKESHARE STATISTICS FOR THREE US CITIES 🚲 🚲 🚲\n")
     while True:
@@ -182,7 +155,6 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        display_data(df)
         restart = input("Would you like to restart and explore more bikeshare data? (y/n) ").lower()
         if restart == "n":
             break

@@ -11,3 +11,10 @@ The files included in this project are:
 * _bikeshare.py_
 * _.gitignore_
 * _README.md_
+
+### Modules
+
+The modules used in this project are:
+
+* _pandas_ ([documentation](https://pandas.pydata.org/docs/))
+* _time_ ([documentation](https://docs.python.org/3/library/time.html))

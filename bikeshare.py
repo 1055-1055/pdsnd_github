@@ -64,7 +64,7 @@ def load_data(city, month, day):
     return df
 
 def time_stats(df):
-    """Displays what month, day, and hour people bikeshare most frequently."""
+    """This function displays what month, day, and hour people bikeshare most frequently."""
     print("⏳ Calculating when people bikeshare most frequently...\n")
     start_time = time.time()
     month, day = "", ""
@@ -83,6 +83,7 @@ def time_stats(df):
     print("\n" + "-" * 68 + "\n")
 
 def station_stats(df):
+    """This function displays which start station, end station, and trip are most popular."""
     print("⏳ Calculating which stations and which trip are most popular...\n")
     start_time = time.time()
     popular_start = df["Start Station"].mode()[0]
@@ -97,6 +98,7 @@ def station_stats(df):
     print("\n" + "-" * 53 + "\n")
 
 def trip_duration_stats(df):
+    """This function displays total travel time and average travel time."""
     print("⏳ Calculating trip duration statistics...\n")
     start_time = time.time()
     travel_time_total = df["Trip Duration"].sum()
